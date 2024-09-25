@@ -27,7 +27,7 @@ public class ClientController {
         return clientService.findAll();
     }
 
-    @GetMapping("{id}")
+    @GetMapping("/{id}")
     public Client findById(@PathVariable UUID id) {
         return clientService.findById(id);
     }
@@ -47,7 +47,7 @@ public class ClientController {
         return clientService.updateClient(id, clientDto);
     }
 
-    @DeleteMapping("/{id]")
+    @DeleteMapping("/{id}")
     public ResponseEntity<String> deleteClient(@PathVariable UUID id) {
         clientService.deleteClient(id);
         return ResponseEntity.ok("Client deleted");
